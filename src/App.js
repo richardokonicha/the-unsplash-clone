@@ -10,7 +10,7 @@ function App() {
 		console.log('this is use Effect')
 		const getList = () => {
 		axios
-		  .get("http://localhost:8000/api/splashs/")
+		  .get("/api/splashs/")
 		  .then((res) => {
 			console.log(res.data)
 			setSplashs(res.data)
