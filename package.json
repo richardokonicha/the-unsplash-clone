@@ -1,5 +1,6 @@
 {
   "name": "frontend",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8000",
@@ -19,6 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
