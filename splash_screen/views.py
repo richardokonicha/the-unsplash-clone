@@ -11,8 +11,16 @@ import os
 
 # Create your views here.
 class SplashView(viewsets.ModelViewSet):
-    serializer_class = SplashSerializer
     queryset = Splash.objects.all()
+    serializer_class = SplashSerializer
+
+    def post(self, request, *args, **kwargs):
+        title = request.data['title']
+        description = request.data['description']
+        # likes = request.data['likes']
+        cover = request.data['cover']
+        Splash.objects.create(title, description, cover)
+        return HttpResponse({'message': 'Splash created'}, status=200)
 
 
 class Assets(View):
