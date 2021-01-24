@@ -1,5 +1,9 @@
 import './App.css';
 import { useState, useEffect } from 'react'
+// import Gallery from './components/Gallery'
+import Gallery from './components/GalleryCrew'
+import Header from "./components/Header";
+
 import axios from "axios";
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -38,36 +42,21 @@ function App() {
 	}, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-       
-	   <div>
-		   <label>
-			   Title
-			   <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-		   </label>
-		   <label>
-			   Description
-			   <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
-		   </label>
-		   <label>
-			   Image
-			   <input type="file" onChange={(e) => setCover(e.target.files[0])}/>
-		   </label>
-		   <button onClick={newSplash}>Add new</button>
-	   </div>
-
-	   {
-		   splashs.map((data) =>(
-			   <div key={data.id}>
-				   {data.title}
-				   {data.description}
-			   </div>
-		   ))
-	   }
-      </header>
-    </div>
-  );
+	// <Gallery 
+	// title={title} 
+	// description={ description} 
+	// splashs={splashs}
+	// setTitle={setTitle} 
+	// setCover={setCover} 
+	// setDescription={setDescription} 
+	// newSplash={newSplash} 
+	// />
+	<>
+	<Header/>
+	<Gallery splashs={splashs}/>
+	</>
+  )
 }
+
 
 export default App;
