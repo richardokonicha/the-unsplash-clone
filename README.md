@@ -13,10 +13,10 @@
   <p align="center">
    A clone of the unsplash project powered by react and django web framework.
     <br />
-    <a href="https://github.com/konichar/the-unsplash-clone"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/konichar/the-unsplash-clone"><strong>Explore the site »</strong></a>
     <br />
     <br />
-    <a href="https://the-unsplash-clone.herokuapp.com">View live demo site </a>
+    <a href="https://the-unsplash-clone.herokuapp.com">Photo gallery</a>
     ·
     <a href="https://github.com/konichar/the-unsplash-clone/issues">Report Bug</a>
     ·
