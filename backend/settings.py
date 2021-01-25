@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'splash_screen',
+    # 's3direct',
+    'storages',
 
 ]
 
@@ -140,7 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
@@ -148,7 +150,7 @@ STATICFILES_DIRS = [
    
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # CORS_ORIGIN_WHITELIST = [
@@ -161,3 +163,22 @@ django_heroku.settings(locals())
 
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
+
+
+AWS_ACCESS_KEY_ID = 'AKIA3VCSGFYBRZZO62FH'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'the-unsplash-clone'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+AWS_DEFAULT_ACL = 'public-read'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static'),
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+DEFAULT_FILE_STORAGE = 'backend.storage_backends.MediaStorage'
