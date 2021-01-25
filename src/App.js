@@ -20,7 +20,7 @@ function App() {
 		uploadData.append('title', title)
 		uploadData.append('description', description)
 		uploadData.append('cover', cover)
-		fetch('http://localhost:8000/api/splashs/', {
+		fetch('/api/splashs/', {
 			method: 'POST',
 			body: uploadData
 		})
@@ -36,7 +36,7 @@ function App() {
 
 	useEffect(()=>{
 		const getList = () => {
-		fetch('http://localhost:8000/api/splashs/')
+		fetch('/api/splashs/')
 		.then(response => response.json())  // convert to json
 		.then(json => {
 			json.reverse()
