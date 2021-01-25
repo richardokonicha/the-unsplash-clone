@@ -1,46 +1,20 @@
 import React from 'react'
+import './Gallery.scss'
 
-
-
-const Gallery = (props) => {
-    const { 
-        title, 
-        description, 
-        splashs, 
-        setTitle, 
-        setCover, 
-        setDescription, 
-        newSplash } = props
-
+const renderImageContent = (src, index) => {
     return (
-        <div className="App">
-        <header className="App-header">
-         <div>
-             <label>
-                 Title
-                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-             </label>
-             <label>
-                 Description
-                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
-             </label>
-             <label>
-                 Image
-                 <input type="file" onChange={(e) => setCover(e.target.files[0])}/>
-             </label>
-             <button onClick={newSplash}>Add new</button>
-         </div>
-         {
-             splashs.map((data) =>(
-                 <div key={data.id}>
-                     {data.title}
-                     {data.description}
-                 </div>
-             ))
-         }
-        </header>
-      </div>
+        <div  key={index} onClick={(e) => alert('e, index')}>
+            <img alt={src.title} src={src.cover}  />
+        </div>
     )
 }
-
+const Gallery = ({ splashs }) => {
+    return (
+        <div className="gallery-container">
+            <div className="gallery-grid">
+                {splashs.map(renderImageContent)}
+            </div>
+        </div>
+        )
+    }
 export default Gallery;
