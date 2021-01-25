@@ -34,7 +34,7 @@
  <img src="media/readme/desktop.png" alt="the unsplash clone">
 </a>
 </p>
-This is a web application written in React and Django rest. 
+This is a web application written in React & Django rest and is automatically deploy on Heroku 🛫
 
 It allows all users Upload new Images which are processed by the django backend and stored on an AWS S3 bucket. 
 
