@@ -30,7 +30,9 @@
 
 <!-- [![The Unsplash Clone][product-screenshot]](media/readme/desktop.png) -->
 <p align=center>
- <img src="media/readme/desktop.png" alt="Logo">
+<a href="https://the-unsplash-clone.herokuapp.com/">
+ <img src="media/readme/desktop.png" alt="the unsplash clone">
+</a>
 </p>
 This is a web application written in React and Django rest. 
 
@@ -136,7 +138,9 @@ Demo Link: [https://the-unsplash-clone.herokuapp.com/](https://the-unsplash-clon
 
 
 <p align=center>
-<img src="media/readme/addphoto.png" alt="Logo">
+<a href="https://the-unsplash-clone.herokuapp.com/">
+  <img src="media/readme/addphoto.png" alt="The unsplash clone">
+<a/>
 If you find this project interesting don't forget to leave a star 💥
 </p>
 
